@@ -1,5 +1,20 @@
 const output = document.getElementById("output");
 const actions = [
+    "護身用だと言って毎日ナイフを持ち歩く人が",
+    "八尺様が",
+    "貞子が",
+    "どこにいても偶然会う人が",
+    "関係を切ろうとすると異常に執着する人が",
+    "人の不幸を見てちょっと楽しそうな人が",
+    "絶対に怒らないけど限界で一気に壊れる人が",
+    "「君のためだよ」と言いながら支配してくる彼氏が",
+    "自殺スポット巡りが趣味なおばあちゃんが",
+    "友人のふりをした嫉妬の鬼が",
+    "生き霊を飛ばすのが得意なあのお断りした人が",
+    "いつもシャーペンで目を突き刺そうとしてくる彼氏が",
+    "蟻をチョークで白く塗りつぶすのが趣味なおじいさんが",
+    "笑顔なのに目は笑っていないあの子が",
+    "ナメクジに塩をかけて、もがき苦しんでいるところを見て微笑んでいる美女が",
     "不良から助けてくれた人が",
     "私のことを柱の影からいつも見守っている人が",
     "ウェディングドレスを着た人が",
@@ -572,10 +587,14 @@ const charaSecret2 = [
     "母の最期の言葉が呪縛となっている"
     
 ];
+
+
+
+
 const button = document.getElementById("button");
 const charaBtn = document.getElementById("chara_button");
 const loveBtn = document.querySelector("#loveBtn");
-const phycho = document.querySelector("#psychoBtn");
+const rejectBtn = document.querySelector("#reject_loveBtn");
 const back = document.querySelector(".back");
 const kisekaeBtn = document.createElement("button");
 back.appendChild(kisekaeBtn);
@@ -769,18 +788,122 @@ loveBtn.addEventListener("click",()=>{
 });
 
 
-phycho.addEventListener("click",()=>{
-    const horrorChara = ["護身用だと言って毎日ナイフを持ち歩く人が","八尺様が","貞子が","どこにいても偶然会う人が","関係を切ろうとすると異常に執着する人が","人の不幸を見てちょっと楽しそうな人が","絶対に怒らないけど限界で一気に壊れる人が","「君のためだよ」と言いながら支配してくる彼氏が","自殺スポット巡りが趣味なおばあちゃんが","友人のふりをした嫉妬の鬼が","生き霊を飛ばすのが得意なあのお断りした人が","いつもシャーペンで目を突き刺そうとしてくる彼氏が","蟻をチョークで白く塗りつぶすのが趣味なおじいさんが","笑顔なのに目は笑っていないあの子が","ナメクジに塩をかけて、もがき苦しんでいるところを見て微笑んでいる美女が"];
-    const horror =
-    [...actions.filter((item)=>item.includes("後ろからずっとついてくる人と")||item.includes("別れようとしている彼女")),...horrorChara];
-    const action = horror[Math.floor(Math.random()* horror.length)];
-    const place = places[Math.floor(Math.random() * places.length)];
-    const action2 = psychoActions2[Math.floor(Math.random() * psychoActions2.length)];
-    const action3 = psychoActions3[Math.floor(Math.random() * psychoActions3.length)];
 
-    const message = `${action}、${place}${action2}、${action3}…`;
+rejectBtn.addEventListener("click",()=>{
+    const rejectStarts = [
+  "ごめん",
+  "気持ちは嬉しいんだけど",
+  "本当にありがとう",
+  "ちゃんと考えたんだけど",
+  "こんなこと言うの苦しいけど",
+  "伝えてくれてありがとう",
+  "すごく悩んだんだけど",
+  "君の気持ちはちゃんと伝わった",
+  "言いにくいんだけど",
+  "ちゃんと答えたくて",
+  "嬉しくなかったわけじゃない",
+  "その気持ちは本当に嬉しい",
+  "ずっと考えてた",
+  "真剣に考えた結果",
+  "期待させるのは嫌だから",
+  "逃げたくなかったからちゃんと言うね",
+  "ごめんね",
+  "うまく言えないけど",
+  "先に謝らせて",
+  "黙ったままは嫌だったから"
+];
+
+const rejectReasons = [
+  "今は恋愛する余裕がなくて",
+  "君とは友達でいたいんだ",
+  "好きな人がいるから",
+  "まだ自分の気持ちが分からない",
+  "誰かと付き合うことを考えられなくて",
+  "今の関係を壊したくなくて",
+  "君の期待に応えられる自信がなくて",
+  "恋愛より優先したいことがあるんだ",
+  "自分のことで精一杯なんだ",
+  "中途半端な気持ちでは付き合えないから",
+  "ちゃんと好きになれないまま付き合うのは違うと思って",
+  "君を傷つける未来しか見えなくて",
+  "今の距離感が心地よくて",
+  "恋愛感情とは少し違ったから",
+  "大切な友達として見ていたから",
+  "自分でも気持ちを整理できてなくて",
+  "遠距離になるかもしれないから",
+  "今は一人でいたいんだ",
+  "期待に応えられる人間じゃないから",
+  "君にはもっといい人がいると思うから",
+  "職場が恋愛禁止なんだ"
+];
+
+const rejectEmotions = [
+  "傷つけたくなかった",
+  "期待させてしまってごめん",
+  "ちゃんと伝えたかった",
+  "曖昧なままにはしたくなかった",
+  "変に誤魔化したくなかった",
+  "真剣な気持ちにちゃんと向き合いたかった",
+  "君を嫌いになったわけじゃない",
+  "むしろ大切に思ってる",
+  "その気持ちは本当に嬉しかった",
+  "言われて嬉しかったのは本当",
+  "何も言わずに離れるのは違うと思った",
+  "君が悪いわけじゃない",
+  "自分勝手なのは分かってる",
+  "うまく答えられなくてごめん",
+  "軽い気持ちで返事したくなかった",
+  "たくさん悩んだ",
+  "ちゃんと考えた上での答えなんだ",
+  "このまま優しくするのも違うと思った",
+  "期待を持たせたくなかった",
+  "最後まで迷ってた"
+];
+
+const rejectEndings = [
+  "だから付き合えない。",
+  "ごめん、応えられない。",
+  "今まで通りでいてほしい。",
+  "でも気持ちは本当に嬉しかった。",
+  "友達としてならこれからも一緒にいたい。",
+  "君の幸せをちゃんと願ってる。",
+  "もっとちゃんとした人を好きになってほしい。",
+  "この答えしか出せなかった。",
+  "期待に応えられなくてごめん。",
+  "きっと後悔はさせたくないから。",
+  "今はこの気持ちに嘘をつけない。",
+  "曖昧な返事はしたくなかった。",
+  "君には笑っていてほしい。",
+  "これからも大切な存在ではある。",
+  "ちゃんと伝えられてよかった。",
+  "君の勇気を無駄にはしたくなかった。",
+  "だからこそ正直に言うね。",
+  "きっと今のままが一番いいと思う。",
+  "気持ちに応えられなくてごめん。",
+  "それでも伝えてくれてありがとう。"
+];
+
+    const rejectStart = rejectStarts[Math.floor(Math.random()*rejectStarts.length)];
+    const rejectReason = rejectReasons[Math.floor(Math.random()*rejectReasons.length)];
+    const rejectEmotion = rejectEmotions[Math.floor(Math.random()*rejectEmotions.length)];
+    const rejectEnding = rejectEndings[Math.floor(Math.random()*rejectEndings.length)];
+    const message = `${rejectStart}、${rejectReason}。${rejectEmotion}。${rejectEnding}`;
     output.textContent = message;
-});
+})
+
+
+// phycho.addEventListener("click",()=>{
+//     const horrorChara = [];
+//     const horror =
+//     [...actions.filter((item)=>item.includes("後ろからずっとついてくる人と")||item.includes("別れようとしている彼女")),...horrorChara];
+//     const action = horror[Math.floor(Math.random()* horror.length)];
+//     const place = places[Math.floor(Math.random() * places.length)];
+//     const action2 = psychoActions2[Math.floor(Math.random() * psychoActions2.length)];
+//     const action3 = psychoActions3[Math.floor(Math.random() * psychoActions3.length)];
+
+//     const message = `${action}、${place}${action2}、${action3}…`;
+//     output.textContent = message;
+// });
 
 document.body.classList.add("kisekaeImage1");
 
@@ -812,5 +935,3 @@ kisekaeBtn.addEventListener("click",()=>{
         };
 });
         
-
-

@@ -37,7 +37,7 @@ h1 {
 #button,
 #loveBtn,
 #chara_button,
-#psychoBtn {
+#reject_loveBtn {
   appearance: none;
   border: none;
   cursor: pointer;
@@ -57,7 +57,7 @@ h1 {
 #button:hover,
 #loveBtn:hover,
 #chara_button:hover,
-#psychoBtn:hover {
+#reject_loveBtn:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(16, 42, 67, 0.22);
   filter: brightness(1.05);
@@ -66,7 +66,7 @@ h1 {
 #button:active,
 #loveBtn:active,
 #chara_button:active,
-#psychoBtn:active {
+#reject_loveBtn:active {
   transform: translateY(0);
   box-shadow: 0 8px 18px rgba(16, 42, 67, 0.18);
 }
@@ -74,7 +74,7 @@ h1 {
 #button:focus-visible,
 #loveBtn:focus-visible,
 #chara_button:focus-visible,
-#psychoBtn:focus-visible {
+#reject_loveBtn:focus-visible {
   outline: 3px solid rgba(16, 42, 67, 0.2);
   outline-offset: 4px;
 }
@@ -115,17 +115,17 @@ h1 {
 }
 
 /* ===== サイコパスボタン ===== */
-#psychoBtn {
+#reject_loveBtn {
   background: linear-gradient(135deg, #5f27cd 0%, #341f97 50%, #222f3e 100%);
   box-shadow: 0 10px 22px rgba(52, 31, 151, 0.3);
 }
 
-#psychoBtn:hover {
+#reject_loveBtn:hover {
   box-shadow: 0 14px 28px rgba(52, 31, 151, 0.38);
   filter: brightness(1.08);
 }
 
-#psychoBtn:focus-visible {
+#reject_loveBtn:focus-visible {
   outline: 3px solid rgba(95, 39, 205, 0.3);
 }
 
